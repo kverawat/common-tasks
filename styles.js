@@ -33,10 +33,12 @@ gulp.task('styles:prod', ['styles:scss'], function() {
 });
 
 /**
- * Compile app.scss into a CSS file.
+ * Compile app.scss into a CSS file. This is a synchronous task (using the "return a stream"
+ * paradigm) so that it will finish before "styles:dev" or "styles:prod" attempt to copy the
+ * generated CSS.
  */
 gulp.task('styles:scss', function() {
-  gulp.src('app/styles/app.scss')
+  return gulp.src('app/styles/app.scss')
     .pipe(size({
       showFiles: true,
       title: 'initial scss files'
