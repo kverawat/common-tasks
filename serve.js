@@ -1,18 +1,19 @@
-'use strict';
-
 var gulp = require('gulp');
-var http = require('http');
-var connect = require('connect');
-var serveStatic = require('serve-static');
-var open = require('open');
+var webserver = require('gulp-webserver');
 
-gulp.task('serve', ['html:watch', 'styles:watch', 'js:watch', 'images:watch'], function () {
-  var port = 9000, 
-      app;
-
-  app = connect().use(serveStatic('dist'));
-  http.createServer(app).listen(port, function () {
-    open('http://localhost:' + port);
-  });
+gulp.task('serve', ['html:watch', 'styles:watch', 'js:watch', 'images:watch'], function() {
+  gulp.src('dist')
+	.pipe(webserver({
+	  host: 'localhost',
+	  port: '8001',
+	  livereload: true,
+	  directoryListing: false,
+	  open: true,
+	  fallback: 'index.html',
+	  proxies: [
+		{
+		  source: '/api/',
+		  target: 'http://localhost:8080/api/'
+		}]
+	}));
 });
-

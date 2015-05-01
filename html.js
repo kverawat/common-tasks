@@ -3,9 +3,12 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 
-gulp.task('html', function () {
-  return gulp.src('app/**/*.html')
-    .pipe(gulp.dest('dist'));
+/**
+ * Copy all HTML files into the dist/ directory. The file structure must be maintained in the copy.
+ */
+gulp.task('html', function() {
+  return gulp.src('app/**/*.html', {base: 'app/'})
+	.pipe(gulp.dest('dist/'));
 });
 
 /**
