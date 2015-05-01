@@ -12,6 +12,6 @@ gulp.task('dev', function(cb) {
   runSequence(
     'clean',
     'setenv:dev',
-    ['libs', 'js:dev', 'js:modernizr', 'js:bowerFiles', 'styles:dev', 'html', 'images'],
+    ['js:dev', 'js:bowerFiles', 'styles:dev', 'html', 'images'],
     cb);
 });

@@ -1,7 +1,7 @@
 A collection of gulp tasks that I like to use in angularjs projects. This project is intended to be
 included in other projects as a git submodule.
 
-#How to Include in a Project:
+#How to include this in a project:
 
 From your project root:
 
@@ -14,21 +14,40 @@ a sibling of the `common-tasks` directory:
 
     app/
       +- styles/
-      +- images/
       +- index.html
     gulp/
-      +- special-task.js
-      +- common-tasks/    <-- git submodule here
+      +- special-task.js    <-- project-specific task
+      +- common-tasks/      <-- git submodule
         +- clean.js
         +- styles.js
         +- ... etc.
     dist/
-      +- index.html
       +- css/
+      +- index.html
 
-#How to Use
+#How to use
 
-To run the asset pipeline during development
+Install gulp globally
+
+    npm install -g gulp
+
+Install these npm modules in your project using `npm install --save-dev`
+
+    gulp
+    del
+    gulp-size
+    gulp-concat
+    gulp-uglify
+    gulp-sourcemaps
+    main-bower-files
+    gulp-ng-annotate
+    gulp-watch
+    run-sequence
+    gulp-sass
+    gulp-minify-css
+    gulp-autoprefixer
+
+To run the asset pipeline for development
 
     gulp dev
 
@@ -36,25 +55,9 @@ To run the asset pipeline for production (includes minification)
 
     gulp prod
 
-To serve and watch all relevant files
+Serve and watch all relevant files (for development only)
 
     gulp serve
-
-#What it includes
-
-##clean.js
-  - `clean`
-    Delete everything in the dist/ directory
-
-##dev.js
-  - `dev`
-
-##prod.js
-  - `prod`
-
-#
-
-##
 
 #License
 

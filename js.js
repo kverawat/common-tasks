@@ -1,12 +1,12 @@
 'use strict';
 
 var gulp = require('gulp');
-var sourcemaps = require('gulp-sourcemaps');
-var concat = require('gulp-concat');
 var size = require('gulp-size');
-var mainBowerFiles = require('main-bower-files');
+var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
 var ngAnnotate = require('gulp-ng-annotate');
+var mainBowerFiles = require('main-bower-files');
 
 /**
  * Include sourcemaps, no minification
@@ -28,7 +28,7 @@ gulp.task('js:dev', function() {
  * Do minification, no sourcemaps.
  */
 gulp.task('js:prod', function() {
-  return gulp.src(['app/**/*.js', '!**/*_test.js', '!**/*_mocks.js'])
+  gulp.src(['app/**/*.js', '!**/*_test.js', '!**/*_mocks.js'])
     .pipe(concat('app.js'))
     .pipe(size({
       showFiles: true,
@@ -48,18 +48,12 @@ gulp.task('js:prod', function() {
 });
 
 /**
- * TODO figure out best way to include modernizr.
- */
-gulp.task('js:modernizr', function() {
-  gulp.src('bower_components/foundation/js/vendor/modernizr.js')
-    .pipe(gulp.dest('dist/'));
-});
-
-/**
  * Gather all js files that we're including with bower, concatenate them, and put them in our dist/
  * directory.
  *
- * Note: no need to do minification. Instead, use overrides in package.json.
+ * Note: no need to do minification. Instead, use the "overrides" in bower.json to use the
+ * vendor-provided minified version when NODE_ENV is set to "production". For example, see
+ * https://github.com/Ludachrispeed/angular1-starter/bower.json
  */
 gulp.task('js:bowerFiles', function() {
   gulp.src(mainBowerFiles())
