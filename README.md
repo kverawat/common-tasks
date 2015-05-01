@@ -1,13 +1,19 @@
 A collection of gulp tasks that I like to use in angularjs projects. This project is intended to be
 included in other projects as a git submodule.
 
-#How to include this in a project:
+#Include common-tasks in a project
 
-From your project root:
+###Create the git submodule
 
+    cd <project_root>
     mkdir gulp
     cd gulp
     git submodule add https://github.com/Ludachrispeed/common-tasks.git
+    cd ..
+    git submodule init
+    git submodule update
+
+###Create project-specif tasks
 
 If you have a project-specific gulp task called `special-task.js`, put it in the `gulp` directory as
 a sibling of the `common-tasks` directory:
@@ -25,39 +31,39 @@ a sibling of the `common-tasks` directory:
       +- css/
       +- index.html
 
-#How to use
+#How to Use
 
-Install gulp globally
+1. Run the asset pipeline
+  - For development
+ 
+         gulp dev
 
-    npm install -g gulp
+  - For production (includes minification)
+
+         gulp prod
+
+2. Deploy your stuff
+
+  - For development (opens browser and watches all relevent files)
+
+         gulp serve 
+
+  - For production
+
+    Copy the contents of `dist/` to your server
+
+#Requires These Packages
 
 Install these npm modules in your project using `npm install --save-dev`
 
-    gulp
-    del
+    del                    gulp-sourcemaps
+    gulp                   gulp-uglify
+    gulp-autoprefixer      gulp-watch
+    gulp-concat            gulp-webserver
+    gulp-minify-css        main-bower-files
+    gulp-ng-annotate       require-dir
+    gulp-sass              run-sequence
     gulp-size
-    gulp-concat
-    gulp-uglify
-    gulp-sourcemaps
-    main-bower-files
-    gulp-ng-annotate
-    gulp-watch
-    run-sequence
-    gulp-sass
-    gulp-minify-css
-    gulp-autoprefixer
-
-To run the asset pipeline for development
-
-    gulp dev
-
-To run the asset pipeline for production (includes minification)
-
-    gulp prod
-
-Serve and watch all relevant files (for development only)
-
-    gulp serve
 
 #License
 
