@@ -34,36 +34,37 @@ a sibling of the `common-tasks` directory:
 #How to Use
 
 1. Run the asset pipeline
-  - For development
+  
+  *For development*
  
          gulp dev
 
-  - For production (includes minification)
+  *For production* (includes minification)
 
          gulp prod
 
 2. Deploy your stuff
 
-  - For development (opens browser and watches all relevent files)
+  *For development* (opens browser and watches all relevent files)
 
          gulp serve 
 
-  - For production
+  *For production*
 
-    Copy the contents of `dist/` to your server
+  Copy the contents of `dist/` to your server
 
 #Requires These Packages
 
 Install these npm modules in your project using `npm install --save-dev`
 
-    del                    gulp-sourcemaps
-    gulp                   gulp-uglify
-    gulp-autoprefixer      gulp-watch
-    gulp-concat            gulp-webserver
-    gulp-minify-css        main-bower-files
-    gulp-ng-annotate       require-dir
-    gulp-sass              run-sequence
-    gulp-size
+| del               | gulp-sourcemaps
+| gulp              | gulp-uglify
+| gulp-autoprefixer | gulp-watch
+| gulp-concat       | gulp-webserver
+| gulp-minify-css   | main-bower-files
+| gulp-ng-annotate  | require-dir
+| gulp-sass         | run-sequence
+| gulp-size         | 
 
 #License
 
