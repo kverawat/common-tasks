@@ -8,7 +8,7 @@ var watch = require('gulp-watch');
  */
 gulp.task('html', function() {
   return gulp.src('app/**/*.html', {base: 'app/'})
-	.pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('dist/'));
 });
 
 /**
@@ -16,5 +16,5 @@ gulp.task('html', function() {
  */
 gulp.task('html:watch', function() {
   watch('app/**/*.html')
-	.pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('dist/'));
 });

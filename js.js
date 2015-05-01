@@ -14,14 +14,14 @@ var ngAnnotate = require('gulp-ng-annotate');
  */
 gulp.task('js:dev', function() {
   return gulp.src(['app/**/*.js', '!**/*_test.js', '!**/*_mocks.js'])
-	.pipe(sourcemaps.init())
-	.pipe(concat('app.js'))
+    .pipe(sourcemaps.init())
+    .pipe(concat('app.js'))
     .pipe(sourcemaps.write())
-	.pipe(size({
-	  showFiles: true,
-	  title: 'js:dev after concat and sourcemaps:'
-	}))
-	.pipe(gulp.dest('dist/'));
+    .pipe(size({
+      showFiles: true,
+      title: 'js:dev after concat and sourcemaps:'
+    }))
+    .pipe(gulp.dest('dist/'));
 });
 
 /**
@@ -29,22 +29,22 @@ gulp.task('js:dev', function() {
  */
 gulp.task('js:prod', function() {
   return gulp.src(['app/**/*.js', '!**/*_test.js', '!**/*_mocks.js'])
-	.pipe(concat('app.js'))
-	.pipe(size({
-	  showFiles: true,
-	  title: 'js:prod after concat:'
-	}))
-	.pipe(ngAnnotate())
-	.pipe(size({
-	  showFiles: true,
-	  title: 'js:prod after annotate:'
-	}))
-	.pipe(uglify())
-	.pipe(size({
-	  showFiles: true,
-	  title: 'js:prod after uglify:'
-	}))
-	.pipe(gulp.dest('dist/'));
+    .pipe(concat('app.js'))
+    .pipe(size({
+      showFiles: true,
+      title: 'js:prod after concat:'
+    }))
+    .pipe(ngAnnotate())
+    .pipe(size({
+      showFiles: true,
+      title: 'js:prod after annotate:'
+    }))
+    .pipe(uglify())
+    .pipe(size({
+      showFiles: true,
+      title: 'js:prod after uglify:'
+    }))
+    .pipe(gulp.dest('dist/'));
 });
 
 /**
@@ -52,7 +52,7 @@ gulp.task('js:prod', function() {
  */
 gulp.task('js:modernizr', function() {
   gulp.src('bower_components/foundation/js/vendor/modernizr.js')
-	.pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('dist/'));
 });
 
 /**
@@ -63,16 +63,16 @@ gulp.task('js:modernizr', function() {
  */
 gulp.task('js:bowerFiles', function() {
   gulp.src(mainBowerFiles())
-	.pipe(size({
-	  showFiles: true,
-	  title: 'bowerFiles before concat:'
-	}))
-	.pipe(concat('bowerFiles.js'))
-	.pipe(gulp.dest('dist/'))
-	.pipe(size({
-	  showFiles: true,
-	  title: 'bowerFiles after concat:'
-	}));
+    .pipe(size({
+      showFiles: true,
+      title: 'bowerFiles before concat:'
+    }))
+    .pipe(concat('bowerFiles.js'))
+    .pipe(gulp.dest('dist/'))
+    .pipe(size({
+      showFiles: true,
+      title: 'bowerFiles after concat:'
+    }));
 });
 
 gulp.task('js:watch', function() {

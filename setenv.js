@@ -12,11 +12,11 @@ var gulp = require('gulp');
  */
 
 gulp.task('setenv:prod', function() {
-	console.log('\tsetting NODE_ENV to \'production\'');
-	process.env.NODE_ENV = 'production';
+  console.log('\tsetting NODE_ENV to \'production\'');
+  process.env.NODE_ENV = 'production';
 });
 
 gulp.task('setenv:dev', function() {
-	console.log('\tsetting NODE_ENV to \'development\'');
-	process.env.NODE_ENV = 'development';
+  console.log('\tsetting NODE_ENV to \'development\'');
+  process.env.NODE_ENV = 'development';
 });

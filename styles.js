@@ -12,7 +12,7 @@ var autoprefixer = require('gulp-autoprefixer');
  */
 gulp.task('styles:dev', ['styles:scss'], function() {
   gulp.src('app/styles/app.css')
-	.pipe(gulp.dest('dist/css/'));
+    .pipe(gulp.dest('dist/css/'));
 });
 
 /**
@@ -20,16 +20,16 @@ gulp.task('styles:dev', ['styles:scss'], function() {
  */
 gulp.task('styles:prod', ['styles:scss'], function() {
   gulp.src('app/styles/app.css')
-	.pipe(size({
-	  showFiles: true,
-	  title: 'size of initial css'
-	}))
-	.pipe(minifyCss({processImport: false}))
-	.pipe(size({
-	  showFiles: true,
-	  title: 'size of css after minify'
-	}))
-	.pipe(gulp.dest('dist/css/'));
+    .pipe(size({
+      showFiles: true,
+      title: 'size of initial css'
+    }))
+    .pipe(minifyCss({processImport: false}))
+    .pipe(size({
+      showFiles: true,
+      title: 'size of css after minify'
+    }))
+    .pipe(gulp.dest('dist/css/'));
 });
 
 /**
@@ -37,24 +37,24 @@ gulp.task('styles:prod', ['styles:scss'], function() {
  */
 gulp.task('styles:scss', function() {
   gulp.src('app/styles/app.scss')
-	.pipe(size({
-	  showFiles: true,
-	  title: 'initial scss files'
-	}))
-	.pipe(sourcemaps.init())
-	.pipe(autoprefixer({
-	  browsers: ['last 2 versions']
-	}))
-	.pipe(sass({
-	  errLogToConsole: true,
-	  includePaths: ['bower_components/foundation/scss/']
-	}))
-	.pipe(sourcemaps.write())
-	.pipe(size({
-	  showFiles: true,
-	  title: 'compiled css files with sourcemaps'
-	}))
-	.pipe(gulp.dest('app/styles/'));
+    .pipe(size({
+      showFiles: true,
+      title: 'initial scss files'
+    }))
+    .pipe(sourcemaps.init())
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions']
+    }))
+    .pipe(sass({
+      errLogToConsole: true,
+      includePaths: ['bower_components/foundation/scss/']
+    }))
+    .pipe(sourcemaps.write())
+    .pipe(size({
+      showFiles: true,
+      title: 'compiled css files with sourcemaps'
+    }))
+    .pipe(gulp.dest('app/styles/'));
 });
 
 /**
