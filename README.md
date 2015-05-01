@@ -57,14 +57,14 @@ a sibling of the `common-tasks` directory:
 
 Install these npm modules in your project using `npm install --save-dev`
 
-| del               | gulp-sourcemaps
-| gulp              | gulp-uglify
-| gulp-autoprefixer | gulp-watch
-| gulp-concat       | gulp-webserver
-| gulp-minify-css   | main-bower-files
-| gulp-ng-annotate  | require-dir
-| gulp-sass         | run-sequence
-| gulp-size         | 
+    del                    gulp-sourcemaps
+    gulp                   gulp-uglify
+    gulp-autoprefixer      gulp-watch
+    gulp-concat            gulp-webserver
+    gulp-minify-css        main-bower-files
+    gulp-ng-annotate       require-dir
+    gulp-sass              run-sequence
+    gulp-size
 
 #License
 
