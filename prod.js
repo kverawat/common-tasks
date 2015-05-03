@@ -12,6 +12,6 @@ gulp.task('prod', function(cb) {
   runSequence(
     'clean',
     'setenv:dev',
-    ['js:prod', 'js:bowerFiles', 'styles', 'html', 'images'],
+    ['js:prod', 'js:bowerFiles', 'styles:prod', 'html', 'images'],
     cb);
 });

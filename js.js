@@ -9,8 +9,7 @@ var ngAnnotate = require('gulp-ng-annotate');
 var mainBowerFiles = require('main-bower-files');
 
 /**
- * Include sourcemaps, no minification
- * TODO: use filters instead of gulp.src exclusions format
+ * Include sourcemaps, no minification.
  */
 gulp.task('js:dev', function() {
   return gulp.src(['app/**/*.js', '!**/*_test.js', '!**/*_mocks.js'])
