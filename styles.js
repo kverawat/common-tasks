@@ -60,9 +60,8 @@ gulp.task('styles:scss', function() {
 });
 
 /**
- * Watch for changes to our SCSS files. If a SCSS file changes, run the 'styles:css' task again
- * (which will in turn run the 'styles:scss' task as well).
+ * Watch for changes to our SCSS files. If an SCSS file changes, run the 'styles:dev' task again.
  */
 gulp.task('styles:watch', function() {
-  console.log('implement me');
+  gulp.watch('app/styles/**/*.scss', ['styles:dev']);
 });
