@@ -48,8 +48,7 @@ gulp.task('styles:scss', function() {
       browsers: ['last 2 versions']
     }))
     .pipe(sass({
-      errLogToConsole: true,
-      includePaths: ['bower_components/foundation/scss/']
+      errLogToConsole: true
     }))
     .pipe(sourcemaps.write())
     .pipe(size({
