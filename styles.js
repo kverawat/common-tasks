@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var size = require('gulp-size');
 var sass = require('gulp-sass');
+var plumber = require('gulp-plumber');
 var minifyCss = require('gulp-minify-css');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
@@ -43,6 +44,7 @@ gulp.task('styles:scss', function() {
       showFiles: true,
       title: 'initial scss files'
     }))
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(autoprefixer({
       browsers: ['last 2 versions']
