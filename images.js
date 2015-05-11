@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 
 gulp.task('images', function() {
-  return gulp.src('app/images/*')
+  gulp.src('app/images/**/*')
     .pipe(gulp.dest('dist/images/'));
 });
 
