@@ -1,7 +1,7 @@
 A collection of gulp tasks that I like to use in angularjs projects. This project is intended to be
 included in other projects as a git submodule.
 
-#Include common-tasks in a project
+##How to include common-tasks in a project
 
 ###Create the git submodule
 
@@ -31,31 +31,26 @@ a sibling of the `common-tasks` directory:
       +- css/
       +- index.html
 
-#How to Use
+##How to Use
 
 1. Run the asset pipeline
   
-  *For development*
- 
-         gulp dev
+  - *For development*: `gulp dev`
 
-  *For production* (includes minification)
+  - *For production* (includes minification): `gulp prod`
 
-         gulp prod
+2. Deploy
 
-2. Deploy your stuff
+  - *For development* (opens browser and watches all relevant files): `gulp serve`
 
-  *For development* (opens browser and watches all relevent files)
+  - *For production*: Copy the contents of `dist/` to your server
 
-         gulp serve 
+##Assumptions
 
-  *For production*
+###npm packages
 
-  Copy the contents of `dist/` to your server
-
-#Requires These Packages
-
-Install these npm modules in your project using `npm install --save-dev`
+It's assumed you have the following npm packages installed in your project using `npm install
+--save-dev`
 
     del                    gulp-sourcemaps
     gulp                   gulp-uglify

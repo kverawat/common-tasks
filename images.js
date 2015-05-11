@@ -9,5 +9,5 @@ gulp.task('images', function() {
 
 // whenever anything in the images folder changes, rerun the images task
 gulp.task('images:watch', function() {
-  gulp.watch('app/images/*', ['images']);
+  gulp.watch('app/images/**/*', ['images']);
 });
