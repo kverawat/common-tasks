@@ -52,7 +52,7 @@ gulp.task('js:prod', function() {
  *
  * Note: no need to do minification. Instead, use the "overrides" in bower.json to use the
  * vendor-provided minified version when NODE_ENV is set to "production". For example, see
- * https://github.com/Ludachrispeed/angular1-starter/bower.json
+ * https://github.com/Ludachrispeed/angular1-starter/blob/master/bower.json
  */
 gulp.task('js:bowerFiles', function() {
   gulp.src(mainBowerFiles())
